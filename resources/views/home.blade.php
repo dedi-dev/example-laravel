@@ -1,6 +1,7 @@
 @extends('layouts.app', ['title' => 'Home'])
 @section('content')
-    @include('layouts.navbar')
+    <!-- @include('layouts.navbar') -->
+    <x-navbar></x-navbar>
     <x-alert>
         <!-- @slot('title', 'Alert Home') -->
         <x-slot name="title">
