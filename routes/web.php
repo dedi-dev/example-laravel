@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileInformationController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,18 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Route::view('/about', 'about');
 Route::view('/blog', 'blog');
 Route::view('/contact', 'contact');
 // Route::view('/profile', 'profile');
-Route::get('/profile/{username}', function (Request $request, $username) {
-    $post = $request->get('post');
-    return view('profile', [
-        'username' => $username,
-        'post' => $post
-    ]);
-});
+// Route::get('/profile/{username}', function (Request $request, $username) {
+//     $post = $request->get('post');
+//     return view('profile', [
+//         'username' => $username,
+//         'post' => $post
+//     ]);
+// });
+
+Route::get('/', HomeController::class);
+Route::get('profile/{username}', ProfileInformationController::class);
+Route::get('tasks', [TaskController::class, 'index']);
