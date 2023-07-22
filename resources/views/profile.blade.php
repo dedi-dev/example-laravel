@@ -1,4 +1,4 @@
-<x-app-layout title="Profile">
+<x-app-layout :title="$username ?? 'Profile'">
     @slot('styles')
     <style>
         body {
@@ -6,5 +6,6 @@
         }
     </style>
     @endslot
-    Ini Profile Page
+    Ini {{$username ?? 'Profile'}} Page
+    <h1>{{$post}}</h1>
 </x-app-layout>
