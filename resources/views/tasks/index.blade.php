@@ -9,7 +9,7 @@
     </div>
     <ol>
         @foreach ($tasks as $task )
-            <li>{{$task->list}}</li>
+            <li>{{$task->list}} - <a href="/tasks/{{$task->id}}/edit">Edit</a></li>
         @endforeach
     </ol>
 </x-app-layout>
