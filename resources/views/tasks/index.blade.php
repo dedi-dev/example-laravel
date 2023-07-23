@@ -9,7 +9,17 @@
     </div>
     <ol>
         @foreach ($tasks as $task )
-            <li>{{$task->list}} - <a href="/tasks/{{$task->id}}/edit">Edit</a></li>
+            <li style="margin-bottom: 10px;">
+                {{$task->list}}
+                <div>
+                    <a href="/tasks/{{$task->id}}/edit">Edit</a>
+                    <form action="/tasks/{{$task->id}}" method="post" style="display: inline; margin-left: 5px">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
+            </li>
         @endforeach
     </ol>
 </x-app-layout>
