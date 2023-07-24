@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileInformationController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -41,3 +42,6 @@ Route::resource('tasks', TaskController::class);
 
 Route::get('users', [UserController::class, 'index']);
 Route::get('users/{user:username}', [UserController::class, 'show'])->name('user.show');
+
+Route::get('register', [RegistrationController::class, 'index'])->name('register');
+Route::post('register', [RegistrationController::class, 'store'])->name('register');
