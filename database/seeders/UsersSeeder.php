@@ -16,6 +16,7 @@ class UsersSeeder extends Seeder
         collect([
             [
                 'name' => 'Dedi',
+                'username' => 'dedi',
                 'email' => 'dedi@email.com',
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
@@ -23,6 +24,7 @@ class UsersSeeder extends Seeder
             ],
             [
                 'name' => 'Azmi',
+                'username' => 'azmi',
                 'email' => 'azmi@email.com',
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
@@ -31,5 +33,7 @@ class UsersSeeder extends Seeder
         ])->each(function($item) {
             \App\Models\User::create($item);
         });
+
+        \App\Models\User::factory(10)->create();
     }
 }
