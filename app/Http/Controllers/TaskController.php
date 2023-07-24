@@ -15,6 +15,10 @@ class TaskController extends Controller
         ]);
     }
 
+    public function create() {
+        return redirect('/tasks');
+    }
+
     public function store(Request $request) {
         // DB::table('tasks')->insert([
         //     'list' => $request->list,
