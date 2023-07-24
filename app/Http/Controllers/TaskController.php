@@ -26,6 +26,9 @@ class TaskController extends Controller
         // Task::insert([
         //     'list' => $request->list,
         // ]);
+        $request->validate([
+            'list' => 'required',
+        ]);
         Task::create([
             'list' => $request->list,
             'mark' => false,
